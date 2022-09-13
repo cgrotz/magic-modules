@@ -2,7 +2,7 @@ resource "google_compute_backend_service" "default" {
   name          = "backend-service%{random_suffix}"
 }
 
-resource "google_iap_settings" "iap_settings" {
+resource "google_iap_web_backend_service_settings" "iap_settings" {
   backend_service_id = google_compute_backend_service.default.name
   application_settings {
     cookie_domain = "domain.dev"

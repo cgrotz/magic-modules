@@ -238,7 +238,7 @@ objects:
           Human-friendly name given to the OAuth client.
         required: true
   - !ruby/object:Api::Resource
-    name: 'Settings'
+    name: 'WebBackendServiceSettings'
     base_url: '{{name}}:iapSettings'
     create_url: 'projects/{{project}}/iap_web/compute/services/{{backend_service_id}}:iapSettings'
     self_link: 'projects/{{project}}/iap_web/compute/services/{{backend_service_id}}:iapSettings'
@@ -254,14 +254,13 @@ objects:
         description: |
           Identifier of the backend service to which this IAP settings should be attached to.
         input: true
-        output: false
         required: true
         url_param_only: true
       - !ruby/object:Api::Type::String
         name: 'name'
         output: true
         description: |
-          Required. The resource name of the IAP protected resource.
+          The resource name of the IAP protected resource.
     properties:
       - !ruby/object:Api::Type::NestedObject
         name: 'accessSettings'
@@ -310,7 +309,6 @@ objects:
             description: |
               Reauth method required by the policy.
             values:
-              - :METHOD_UNSPECIFIED
               - :LOGIN
               - :PASSWORD
               - :SECURE_KEY
@@ -325,7 +323,6 @@ objects:
             description: |
               How IAP determines the effective policy in cases of hierarchial policies. Policies are merged from higher in the hierarchy to lower in the hierarchy.
             values:
-              - :POLICY_TYPE_UNSPECIFIED
               - :MINIMUM
               - :DEFAULT
       - !ruby/object:Api::Type::NestedObject

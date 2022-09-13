@@ -232,7 +232,7 @@ overrides: !ruby/object:Overrides::ResourceOverrides
     custom_code: !ruby/object:Provider::Terraform::CustomCode
       post_create: templates/terraform/post_create/iap_client.go.erb
       custom_import: templates/terraform/custom_import/iap_client.go.erb
-  Settings: !ruby/object:Overrides::Terraform::ResourceOverride
+  WebBackendServiceSettings: !ruby/object:Overrides::Terraform::ResourceOverride
     skip_delete: true
     id_format: '{{project}}/iap_web/compute/services/{{backend_service_id}}:iapSettings'
     import_format: [ '{{project}}/iap_web/compute/services/{{backend_service_id}}:iapSettings']
