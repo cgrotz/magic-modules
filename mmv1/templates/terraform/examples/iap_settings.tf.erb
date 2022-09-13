@@ -1,5 +1,5 @@
 resource "google_compute_backend_service" "default" {
-  name          = "backend-service%{random_suffix}"
+  name          = "<%= ctx[:vars]['backend_service_name'] %>"
 }
 
 resource "google_iap_web_backend_service_settings" "iap_settings" {

@@ -240,6 +240,8 @@ overrides: !ruby/object:Overrides::ResourceOverrides
       - !ruby/object:Provider::Terraform::Examples
         name: "iap_settings"
         primary_resource_id: "iap_settings"
+        vars:
+          backend_service_name: 'my-backend-service'
         test_env_vars:
           org_id: :ORG_ID
 # This is for copying files over
